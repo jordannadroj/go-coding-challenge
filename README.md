@@ -108,4 +108,3 @@ The generated `UnmarshalJSON` requires `encoding/json` and `fmt` in the output f
 - **Array of objects**: arrays whose `items` is an inline object (not a `$ref`) are not handled — they fall through to `[]any`. A recursive call into `generateObject` for the items schema would fix this.
 - **`additionalProperties`**: schemas that allow arbitrary extra fields should map to `map[string]any` for the extra-properties portion.
 - **Multiple output files**: splitting output by schema title would scale better and produce cleaner diffs.
-- **Generator tests**: unit tests for `generateObject` and `generateOneOf` against known schemas would make future changes safer.
