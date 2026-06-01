@@ -15,19 +15,7 @@ go version  # should print go1.23 or higher
 
 ## Why Make?
 
-Make was chosen as the developer tool because it gives the workflow a single, memorable entry point without requiring any additional dependencies beyond what Go already needs. A few specific reasons:
-
-- **Discoverability** — `make generate`, `make test`, `make all` are self-describing. A new contributor doesn't need to read docs to know what each target does.
-- **Dependency ordering** — Make lets targets depend on other targets. `test` depends on `generate`, so `make test` always regenerates the model before running the test suite. This prevents a common mistake where you run tests against a stale generated file.
-- **No extra tooling** — alternatives like `Task` or `Mage` would require installing another binary. Make is pre-installed on macOS and Linux and needs no setup.
-- **Convention** — Makefiles are a widely understood convention in Go projects. Reviewers and CI systems know how to use one without explanation.
-
-If Make is not available (e.g. on Windows without a POSIX layer), the two underlying commands can be run directly:
-
-```bash
-go run ./cmd/gen/
-go test ./...
-```
+Make was chosen as the developer tool because it gives the workflow a single, memorable entry point without requiring any additional dependencies beyond what Go already needs. For the purpose of this assignment it is very lightweight easy to implement solution and allows a user to quickly inspect the make command scripts if necessary.
 
 ---
 
